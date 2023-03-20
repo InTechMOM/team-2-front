@@ -1,5 +1,6 @@
 :root {
     --left-size: 200px;
+    --top-size: 100px;
 }
 
 body{
@@ -29,7 +30,6 @@ body{
 nav{
     background: rgb(33,69,91);
     background: linear-gradient(0deg, rgba(33,69,91,1) 0%, rgba(86,187,140,1) 86%);
-
     position:fixed;
     width: var(--left-size);
     left: 0;
@@ -42,7 +42,7 @@ header{
     left:var(--left-size);
     width:calc(100% - var(--left-size));
     top: 0px;
-    height: 100px;
+    height: var(--top-size);
 
 }
 .boton{
@@ -64,17 +64,28 @@ header{
 .pl-info{
     left:var(--left-size);
 }
+.container {
+    padding-left: var(--left-size);
+    padding-top: var(--top-size);
+}
+
 .main{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 10px;
    
 }
-.main__column{
-    display: grid;
-    grid-row: calc(100% / 2);
-}
 
+#left_column{
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+#right_column{
+    display: grid;
+    grid-column: 2 / 2;  
+    grid-row: 1;  
+}
 .form {
     padding-left: var(--left-size);
 }
