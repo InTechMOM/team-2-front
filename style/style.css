@@ -7,13 +7,14 @@ body{
     background: #EBFFF5 ;
     text-align: left;
 }
-.titulo {
+.title{
     font-size: 20px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:Comfortaa;
     color: white;
-    width: 50%;
+    width: 25%;
+    background: #56bb86 ;
 }
 .input{
     border-radius: 20px;
@@ -60,6 +61,9 @@ header{
 }
 .icono{
     width: 40px
+}
+.nav-img{ 
+    width: 20px;
 }
 .pl-info{
     left:var(--left-size);
