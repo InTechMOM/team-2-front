@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <title> InTechMom Project</title> 
-        <meta  name="description" content="este sprint es para el cargue del video" />
+        <meta  name="description" content="este sprint es para el ingreso" />
         <meta name="author" content="Martina Zambrano"/>
         <meta  name="keywords"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,90 +12,28 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="./style/style.css">
     </head>
     <body>
+        <div class="orientacion">
+            <img class="logo" src="./image/Logo edvisto.png">
+        </div>
+        <div class="orientacion">
+            <label class="switch" >
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+        </div>
+        <div class="orientacion">
+            <i class="fa-solid fa-user fa-2xl" style="color: rgba(255, 255, 255, 0.5);"></i>
+            <input id="" class="input" type="text" placeholder="Usuario" required minlength="1">
+        </div>
+        <div class="orientacion">
+            <button id="" class="boton" type="button" >
+                Entrar
+            </button>
+        </div>
 
-        <header>
-            <div class="user">
-                 
-                <a class="user-link" href="#"><img src="./image/icono usuario.png" id="icono-user">Nombre</a>
-            </div>
-        </header>
-        <nav>
-            <div class="logo-nav">
-                <img src="./image/Logo edvisto.png" id="ed-img">
-            </div>
-            <div class="navegacion">
-                <div>
-                    <button id="btn-inicio" class="btn-nav" type="button"><img src="./image/icono inicio.png" class="nav-img">Inicio</button>
-                </div>
-                <div>
-                    <button id="btn-evaluacion" class="btn-nav" type="button"><img src="./image/icono evaluacion.png" class="nav-img">Evaluacion</button>      
-                </div>
-                <div>
-                    <button id="btn-analisis" class="btn-nav" type="button"><img src="./image/icono analisis.png" class="nav-img">Analisis</button>
-                </div>
-                <div>
-                    <button id="btn-foro" class="btn-nav" type="button"><img src="./image/icono foro.png" class="nav-img">Foros</button>
-                </div>
-            </div>
-        </nav>  
-            <div class="container">
-                <div class="title">
-                    <img src="./image/icono carguevideo.png" class="icono"> Cargar Video              
-                </div>
-                <form action="" class="flex-form">
-                    <div class="main">
-                        <div class="main__column" id="left_column">
-                            <section class="info" id="pl-info">
-                                <h5 class="title-pl title-pro left-line"> Lider del Proyecto</h5>
-                                <div class="name-info">
-                                    <img src="./image/icono nombre.png" class="icono-info">
-                                    <input id="info__first_name" class="input input-info"  type="text" placeholder="Nombre" required minlength="1" maxlength="20">
-                                    <input id="info__last_name" class="input input-info" type="text" placeholder="Apellido" required minlength="1" maxlength="20">
-                                </div>
-                                <div class="email-info">
-                                    <img src="./image/icono email.png" class="icono-info">
-                                    <input id="info__email" class="input" type="email" placeholder="Correo" required minlength="1" maxlength="40">
-                                </div>
-                            </section>
-                            
-                            <section class="info" id="project-info">
-                                <h5 class="title-pl title-pro left-line"> Proyecto</h5>
-                                <div class="title-info">
-                                    <img src="./image/icono titulo.png" class="icono-info">
-                                    <input id="info__title" class="input input-pro" type="text" placeholder="Título del Proyecto" required minlength="1" maxlength="30">
-                                </div>
-                                <div class="descp-info">
-                                    <img src="./image/icono descp.png" class="icono-info">
-                                    <textarea id="info__description" name="textarea" rows="10" cols="50" class="input input-pro" placeholder=" Descripción"></textarea>
-                                </div>
-                            </section>  
-                        </div>
-                        <div class="main__column" id="right_column">
-                            <section class="info" id="show-video">
-                                <h5 class="title-pl right-line"> Video</h5>
-                                <div id="main_column-link">
-                                    <input id="project-info__link" class="input" type="text" placeholder="https://" required minlength="1">
-                                    <button id="btn-cargar" class="boton" type="button" >
-                                    Cargar
-                                    </button>
-                                </div>
-                                <div id="main_column-video">
-                                    <iframe width="100%" height="445px" src="https://www.youtube.com/embed/Kch8n4tcOZQ" allowfullscreen></iframe>
-                                </div>
-                                <div class="guardar">
-                                    <button id="btn-guardar" class="boton" type="button" >
-                                        Guardar
-                                     </button>
-                                </div>
-                            </section>
-                        </div>             
-                    </div>
-                </form>
-                </div>
-        </section> 
-        <script src="./js/app.js"></script>  
     </body>
 </html>
