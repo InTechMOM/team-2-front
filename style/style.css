@@ -12,19 +12,23 @@ body{
     border-radius: 45px;
     text-align: center;
     border: 0;
-    width: 110px;
+    width: 115px;
     height: 45px;
     font-family: 'Comfortaa';
-    font-size: 28px;
+    font-size: 22px;
+    box-shadow: 0px 10px 10px 1px rgba(0,0,0,0.5);
 }
 .logo{
     width: 296.62px;
     height: 150px;
     margin-top: 152px;
+    margin-bottom: 157px;
+
 }
 .orientacion{
     display: flex;
     justify-content: center;
+    align-items: center;
 
 }
 input{
@@ -33,7 +37,14 @@ input{
     font-size: 25px;
     font-family: 'Lato';
     line-height: 24px;
-    font-style: extraLightItalic;
+    font-style: italic;
+    font-weight: lighter;
+    padding-left: 25px;
+    width: 350px;
+    height: 50px;
+    margin-top: 35px;
+    margin-bottom: 45px;
+    margin-left: 20px;
 }
 
 /* estilo del toggle */
@@ -70,12 +81,13 @@ input{
     width: 72px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: url('../image/icono\ 1.png');
+    background-size: cover;
+    background-position: center center;
     -webkit-transition: .4s;
     transition: .4s;
   }
-  
-  
   
   input:checked + .slider {
     background-color: #56BB8C;
