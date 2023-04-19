@@ -15,29 +15,32 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="./style/style.css">
         <link rel="stylesheet" href="./style/pagina-cargar.css">
+        <script src="./scripts/shared.js"></script> 
     </head>
     <body>
         <div class="orientacion">
             <img class="logo" src="./images/Logo edvisto.png">
         </div>
-        <div class="orientacion">
-            <label class="switch" >
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-        </div>
-        <div class="orientacion">
-            <i id="ico" class="fa-solid fa-user fa-2xl" style="color: rgba(255, 255, 255, 0.5);"></i>
-            <input class="input input-login" type="text" placeholder="Usuario" required minlength="1">
-        </div>
-        <div class="orientacion">
-            <a href="./pages/registro.html" target="_blank">Crear tu Usuario aquí</a>
-        </div>
-        <div class="orientacion">
-            <button id="btn-entrar" class="boton" type="button" >
-                Entrar
-            </button>
-        </div>
-
+        <form>
+            <div class="orientacion">
+                <label class="switch" >
+                    <input  id="check-rol" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+            </div>
+            <div class="orientacion">
+                <i id="ico" class="fa-solid fa-user fa-2xl" style="color: rgba(255, 255, 255, 0.5);"></i>
+                <input id="id-login" class="input input-login v-email" type="text" placeholder="Usuario" required minlength="1">
+            </div>
+            <div class="orientacion">
+                <a href="./pages/registro.html" target="_blank">Crear tu Usuario aquí</a>
+            </div>
+            <div class="orientacion">
+                <button id="btn-entrar" class="boton" type="button" >
+                    Entrar
+                </button>
+            </div>
+        </form>
+        <script src="./scripts/ingreso.js"></script> 
     </body>
 </html>

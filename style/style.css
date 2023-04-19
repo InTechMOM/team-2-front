@@ -3,7 +3,7 @@ body{
     background: linear-gradient(180deg, rgba(33,69,91,1) 17%, rgba(86,187,140,0.9976365546218487) 67%);
     left: 0;
     top: 0;
-    height: 100vh;
+    min-height: 100vh;
     z-index: 10;
 }
 .boton{
