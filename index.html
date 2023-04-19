@@ -14,10 +14,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="./style/pagina-cargar.css">
     </head>
     <body>
         <div class="orientacion">
-            <img class="logo" src="./image/Logo edvisto.png">
+            <img class="logo" src="./images/Logo edvisto.png">
         </div>
         <div class="orientacion">
             <label class="switch" >
@@ -27,10 +28,13 @@
         </div>
         <div class="orientacion">
             <i id="ico" class="fa-solid fa-user fa-2xl" style="color: rgba(255, 255, 255, 0.5);"></i>
-            <input id="" class="input" type="text" placeholder="Usuario" required minlength="1">
+            <input class="input input-login" type="text" placeholder="Usuario" required minlength="1">
         </div>
         <div class="orientacion">
-            <button id="" class="boton" type="button" >
+            <a href="./pages/registro.html" target="_blank">Crear tu Usuario aquí</a>
+        </div>
+        <div class="orientacion">
+            <button id="btn-entrar" class="boton" type="button" >
                 Entrar
             </button>
         </div>

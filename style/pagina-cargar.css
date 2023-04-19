@@ -3,7 +3,7 @@
     --top-size: 100px;
 }
 
-body{
+.body-cargar{
     background: #EBFFF5 ;
     text-align: left;
 }
@@ -23,18 +23,13 @@ body{
     padding-left: 12px;
     margin-top: 27px;
 }
-.input{
-    border-radius: 20px;
-    border-color: #21455b;
-    border-width: 1px;
-    font-size: 25px;
-    font-family: 'Lato';
-    line-height: 30px;
-    font-style: italic;
-}
 
 .input-info, #info__email, #project-info__link, #info__title {
     height: 40px;
+    line-height: 30px;
+}
+.input-login{
+    line-height: 24px;
 }
 #project-info__link{
     width: 100%;
@@ -51,6 +46,9 @@ body{
 .input-pro{
     width: 100%;
     margin-bottom: 38px;
+}
+.input-regis{
+    margin-bottom: 29px;
 }
 .navegacion{
     margin-top: 240px;
@@ -110,18 +108,6 @@ header{
     position: absolute;
 
 }
-.boton{
-    color: white;
-    background: #21455b;
-    border-radius: 30px;
-    text-align: center;
-    border: 0;
-    width: 140px;
-    height: 40px;
-    text-transform: uppercase;
-    font-family: 'Comfortaa';
-    font-size: 28px;
-}
 #btn-guardar{
     width: 160px;
     margin-top: 36px;
@@ -129,12 +115,23 @@ header{
 #btn-cargar{
     margin-left: 6px;
 }
+#btn-entrar{
+    margin-top: 52px;
+}
+#btn-registro{
+    width: 180px;
+}
 #ed-img{
     height: 90px;
 }
 .logo-nav{
     text-align: center;
     margin-top: 9px;
+}
+
+.logo-regis{
+    margin-bottom: 75px;
+    margin-top: 152px;
 }
 .icono{
     width: 55px;

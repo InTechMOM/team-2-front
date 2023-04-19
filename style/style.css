@@ -18,6 +18,7 @@ body{
     font-size: 22px;
     box-shadow: 0px 10px 10px 1px rgba(0,0,0,0.5);
 }
+
 .logo{
     width: 296.62px;
     height: 150px;
@@ -36,16 +37,97 @@ input{
     border-width: 1px;
     font-size: 25px;
     font-family: 'Lato';
-    line-height: 24px;
     font-style: italic;
     font-weight: lighter;
+    border-color: #21455b;
     padding-left: 25px;
     width: 350px;
     height: 50px;
     margin-top: 35px;
-    margin-bottom: 45px;
+    margin-bottom: 14px;
     margin-left: 20px;
 }
+/*** ********* css del menu maestro(proyecto)*/
+
+  .input-menu {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  /* esto se va a borrar */
+  .row {
+    display: flex;
+  }
+  
+  .row .col {
+    flex: 1;
+  }
+  /* esto tambien se va*/
+  .row .col:last-child {
+    margin-left: 1em;
+  }
+  
+  /* Accordion styles */
+  .tabs {
+    overflow: hidden;
+  }
+  
+  .tab {
+    width: 100%;
+    color: #21455B; 
+    overflow: hidden;
+  }
+  
+  .tab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background:none;
+    font-weight: bold;
+    cursor: pointer;
+    /* Icon */
+  }
+  
+  .tab-label:hover {
+    background:#F5F5F5;
+  }
+  
+  .tab-label::after {
+    content: "❯";
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    transition: all 0.35s;
+  }
+  .tab-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: #21455B;
+    background: #EBFFF5;
+    transition: all 0.35s;
+  }
+  .tab-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: #EBFFF5;
+    cursor: pointer;
+  }
+  .tab-close:hover {
+    background: #EBFFF5;
+  }
+  
+  input:checked + .tab-label {
+    background: #EBFFF5;
+  }
+  input:checked + .tab-label::after {
+    transform: rotate(90deg);
+  }
+  input:checked ~ .tab-content {
+    max-height: 100vh;
+    padding: 1em;
+  }
 
 /* estilo del toggle */
 .switch {
@@ -82,7 +164,7 @@ input{
     left: 4px;
     bottom: 4px;
     background-color: rgba(255, 255, 255, 0.5);
-    background-image: url('../image/icono\ 1.png');
+    background-image: url('../images/icono\ 1.png');
     background-size: cover;
     background-position: center center;
     -webkit-transition: .4s;
@@ -130,10 +212,79 @@ input{
     margin-left: 78px;
     margin-right: 0px;
   }
-  
-  
   input:checked + .slider:after {
     content: "Alumno";
     margin-left: 60px;
   }
   /*termina stilo del toggle*/
+
+  /* estilo del radios*/
+  /* The container */
+.container-radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 24px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: white;
+    font-family: 'Comfortaa';
+    margin-right: 16px;
+    margin-bottom: 55px;
+  
+  }
+  
+  /* Hide the browser's default radio button */
+  .container-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: inset 10px 0px gray);
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container-radio:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container-radio input:checked ~ .checkmark {
+    background-color: #21455B;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container-radio input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container-radio .checkmark:after {
+       top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }
+  /* termina estilo del radios*/

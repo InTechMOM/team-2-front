@@ -12,38 +12,39 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="../style/style.css">
+        <link rel="stylesheet" href="../style/pagina-cargar.css">
     </head>
-    <body>
+    <body class="body-cargar">
 
         <header>
             <div class="user">
                  
-                <a class="user-link" href="#"><img src="./image/icono usuario.png" id="icono-user">Nombre</a>
+                <a class="user-link" href="#"><img src="../images/icono usuario.png" id="icono-user">Nombre</a>
             </div>
         </header>
         <nav>
             <div class="logo-nav">
-                <img src="./image/Logo edvisto.png" id="ed-img">
+                <img src="../images/Logo edvisto.png" id="ed-img">
             </div>
             <div class="navegacion">
                 <div class="bg-nav">
-                    <button id="btn-inicio" class="btn-nav" type="button"><img src="./image/icono inicio.png" class="nav-img">Inicio</button>
+                    <button id="btn-inicio" class="btn-nav" type="button"><img src="../images/icono inicio.png" class="nav-img">Inicio</button>
                 </div>
                 <div class="bg-nav">
-                    <button id="btn-evaluacion" class="btn-nav" type="button"><img src="./image/icono evaluacion.png" class="nav-img">Evaluacion</button>      
+                    <button id="btn-evaluacion" class="btn-nav" type="button"><img src="../images/icono evaluacion.png" class="nav-img">Evaluacion</button>      
                 </div>
                 <div class="bg-nav">
-                    <button id="btn-analisis" class="btn-nav" type="button"><img src="./image/icono analisis.png" class="nav-img">Analisis</button>
+                    <button id="btn-analisis" class="btn-nav" type="button"><img src="../images/icono analisis.png" class="nav-img">Analisis</button>
                 </div>
                 <div class="bg-nav">
-                    <button id="btn-foro" class="btn-nav" type="button"><img src="./image/icono foro.png" class="nav-img">Foros</button>
+                    <button id="btn-foro" class="btn-nav" type="button"><img src="../images/icono foro.png" class="nav-img">Foros</button>
                 </div>
             </div>
         </nav>  
             <div class="container">
                 <div class="title">
-                    <img src="./image/icono carguevideo.png" class="icono"> Cargar Video              
+                    <img src="../images/icono carguevideo.png" class="icono"> Cargar Video              
                 </div>
                 <form action="" class="flex-form">
                     <div class="main">
@@ -51,12 +52,12 @@
                             <section class="info" id="pl-info">
                                 <h5 class="title-pl title-pro left-line"> Lider del Proyecto</h5>
                                 <div class="name-info">
-                                    <img src="./image/icono nombre.png" class="icono-info">
+                                    <img src="../images/icono nombre.png" class="icono-info">
                                     <input id="info__first_name" class="input input-info"  type="text" placeholder="Nombre" required minlength="1" maxlength="20">
                                     <input id="info__last_name" class="input input-info" type="text" placeholder="Apellido" required minlength="1" maxlength="20">
                                 </div>
                                 <div class="email-info">
-                                    <img src="./image/icono email.png" class="icono-info">
+                                    <img src="../images/icono email.png" class="icono-info">
                                     <input id="info__email" class="input" type="email" placeholder="Correo" required minlength="1" maxlength="40">
                                 </div>
                             </section>
@@ -64,11 +65,11 @@
                             <section class="info" id="project-info">
                                 <h5 class="title-pl title-pro left-line"> Proyecto</h5>
                                 <div class="title-info">
-                                    <img src="./image/icono titulo.png" class="icono-info">
+                                    <img src="../images/icono titulo.png" class="icono-info">
                                     <input id="info__title" class="input input-pro" type="text" placeholder="Título del Proyecto" required minlength="1" maxlength="30">
                                 </div>
                                 <div class="descp-info">
-                                    <img src="./image/icono descp.png" class="icono-info">
+                                    <img src="../images/icono descp.png" class="icono-info">
                                     <textarea id="info__description" name="textarea" rows="10" cols="50" class="input input-pro" placeholder=" Descripción"></textarea>
                                 </div>
                             </section>  
@@ -96,6 +97,6 @@
                 </form>
                 </div>
         </section> 
-        <script src="./js/app.js"></script>  
+        <script src="../scripts/app.js"></script>  
     </body>
 </html>
