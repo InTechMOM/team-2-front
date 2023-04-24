@@ -54,28 +54,19 @@ input{
     opacity: 0;
     z-index: -1;
   }
-  /* esto se va a borrar */
-  .row {
-    display: flex;
-  }
-  
+ 
   .row .col {
     flex: 1;
   }
-  /* esto tambien se va*/
-  .row .col:last-child {
-    margin-left: 1em;
-  }
+
   
   /* Accordion styles */
-  .tabs {
-    overflow: hidden;
-  }
   
   .tab {
     width: 100%;
     color: #21455B; 
     overflow: hidden;
+    background-color: rgba(86,187,140,0.2);
   }
   
   .tab-label {
@@ -89,7 +80,7 @@ input{
   }
   
   .tab-label:hover {
-    background:#F5F5F5;
+    background:rgba(86,187,140,0.2);
   }
   
   .tab-label::after {
@@ -103,7 +94,7 @@ input{
     max-height: 0;
     padding: 0 1em;
     color: #21455B;
-    background: #EBFFF5;
+    background: rgba(86,187,140,0.2);;
     transition: all 0.35s;
   }
   .tab-close {
@@ -111,15 +102,15 @@ input{
     justify-content: flex-end;
     padding: 1em;
     font-size: 0.75em;
-    background: #EBFFF5;
+    background: rgba(86,187,140,0.2);;
     cursor: pointer;
   }
   .tab-close:hover {
-    background: #EBFFF5;
+    background: rgba(86,187,140,0.2);;
   }
   
   input:checked + .tab-label {
-    background: #EBFFF5;
+    background: rgba(86,187,140,0.2);;
   }
   input:checked + .tab-label::after {
     transform: rotate(90deg);
