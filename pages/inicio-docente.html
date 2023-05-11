@@ -9,18 +9,19 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../style/style.css">
         <link rel="stylesheet" href="../style/pagina-cargar.css">
+
     </head>
     <body class="body-cargar">
 
         <header>
-            <div class="user">
-                 
-                <a class="user-link" href="#">Hola Nombre Docente</a>
+            <div class="user"> 
+                <a class="user-link" href="#">¡Hola, Nombre Docente!</a>
             </div>
         </header>
         <nav>
@@ -28,9 +29,6 @@
                 <img src="../images/Logo edvisto.png" id="ed-img">
             </div>
             <div class="navegacion">
-                <div class="bg-nav">
-                    <button id="btn-inicio" class="btn-nav" type="button"><img src="../images/icono inicio.png" class="nav-img">Inicio</button>
-                </div>
                 <div class="bg-nav">
                     <button id="btn-evaluacion" class="btn-nav" type="button"><img src="../images/icono evaluacion.png" class="nav-img">Evaluacion</button>      
                 </div>
@@ -41,43 +39,59 @@
                     <div class="main">
                         <div class="main__column" id="left_column">
                             <section >
-                                <div class="title">
-                                    <img src="../images/icono 1.png" class="icono"> Mis Alumnos             
+                                <div>
+                                  <h5 class="title-pl right-line">Proyectos</h5>         
                                 </div> 
-                                <input type="search" placeholder="Buscardor">
+                                <div class="background-proyect">
+                                  <input type="search" placeholder="Buscador">
+                                  <div class="row">
+                                    <div class="col">
+                                      <div class="tabs" id="tabs-container">
+                                      </div>
+                                  </div>
+                                </div>
                             </section>
                         </div>
                         <div class="main__column" id="right_column">
                         <section>
-                            <div class="row">
-                              <div class="col">
-                                <div class="tabs">
-                                  <div class="tab">
-                                    <input class="input-menu" type="radio" id="rd1" name="rd">
-                                    <label class="tab-label" for="rd1">Item 1</label>
-                                    <div class="tab-content">
-                                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, facilis.
-                                    </div>
-                                  </div>
-                                  <div class="tab">
-                                    <input  class="input-menu" type="radio" id="rd2" name="rd">
-                                    <label class="tab-label" for="rd2">Item 2</label>
-                                    <div class="tab-content">
-                                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.
-                                    </div>
-                                  </div>
-                                  <div class="tab">
-                                    <input  class="input-menu" type="radio" id="rd3" name="rd">
-                                    <label for="rd3" class="tab-close">Close others &times;</label>
-                                  </div>
-                                </div>
+                            <div>
+                              <h5 class="title-pl right-line"> Evaluacion</h5>        
+                             </div> 
+                            <div id="repro-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/afo7Ynw-BX8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </div>
-                         </section>
-                        </div>             
-                    </div>
-                </form>
-                </div>
-        </section> 
-        <script src="../js/app.js"></script>  
+                            <div>
+                                <label for="habilidades">Habilidades a Evaluar</label>
+                                  <select name="habilidades" id="habi-drop-down">
+                                    <option value="creatividad">Creatividad</option>
+                                    <option value="comunicacion">Comunicacion</option>
+                                    <option value="colaboracion">Colaboracion</option>
+                                    <option value="pensamiento-critico">Pensamiento Critico</option>
+                                    <option value="pensamiento-logico">Pensamiento Logico</option>
+                                    <option value="innovacion">Innovacion</option>
+                                    <option value="trabajo-equipo">Trabajo en Equipo</option>
+                                    <option value="resol-problema">Resolucion de Problemas</option>
+                                    <option value="adaptabilidad">Adaptabilidad</option>
+                                  </select>
+                           </div>
+                           <div class="form-group">
+                               <input class="star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
+                               <label class="label-starts" for="star1"><i class="starPicker starIcon1 fa-solid fa-star"></i></label>
+                                                         <input class="star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
+                               <label class="label-starts" for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
+                                                         <input class="star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
+                               <label class="label-starts" for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
+                                                         <input class="star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
+                               <label class="label-starts" for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
+                                                         <input class="star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
+                               <label class="label-starts" for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
+                           </div>
+                           <div>
+                            <p><label for="w3review">Comentarios:</label></p>
+                            <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
+                            <button id="btn-añadir" class="boton" type="button" > Añadir </button>
+                           </div>
+                          </section> 
+        <script src="../scripts/inicio-docente.js"></script>  
     </body>
 </html>

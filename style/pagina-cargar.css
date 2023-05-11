@@ -78,8 +78,8 @@
 
 .title-pl{
     font-family: 'Comfortaa';
-    color: black;
-    font-size: 25px;
+    color: #21455B;
+    font-size: 24px;
 
 }
 /*
@@ -150,7 +150,7 @@ header{
 }
 .user-link{
     font-family: 'Comfortaa';
-    font-size: 25px;
+    font-size: 22px;
     display: flex;
     align-items: center;
     color: white;
