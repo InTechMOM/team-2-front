@@ -10,7 +10,7 @@ function createTab(id, studentName, projectName, videoUrl, description) {
       </div>
     </label>
     <div class="tab-content">
-      <a href="${videoUrl}">URL al video</a>
+      <button class="button-as-link" onclick="loadProject(${id})">${videoUrl}</button>
       <div>
       ${description}
       </div>
@@ -19,7 +19,8 @@ function createTab(id, studentName, projectName, videoUrl, description) {
   return divTab
 }
 
-function getTabs() {
+function getProjects() {
+  // Emula llamado a la API
   return Array(15).fill(0).map((item, index) => ({
     id: index,
     studentName: 'Martina Zambrano',
@@ -29,14 +30,44 @@ function getTabs() {
   }))
 }
 
-function loadTabs () {
-  const tabs = getTabs()
+let projects = []
+
+function loadProjectsOnTab () {
+  projects = getProjects()
   const tabsContainer = document.getElementById('tabs-container')
-  for (const tab of tabs) {
-    console.log(tab)
-    const tabElement = createTab(tab.id, tab.studentName, tab.projectName, tab.videoUrl, tab.description)
+  for (const project of projects) {
+    const tabElement = createTab(project.id, project.studentName, project.projectName, project.videoUrl, project.description)
     tabsContainer.appendChild(tabElement)
   }
 }
 
-loadTabs()
+loadProjectsOnTab()
+
+
+
+const videoContainer = document.getElementById("repro-video");
+
+function loadProject(id) {
+  const projectContainer = document.getElementById('project-section')
+  projectContainer.classList.remove('hide')
+  const project = projects.find(project => project.id == id)
+  loadYouTubeVideo(project.videoUrl)
+  console.log(project)
+}
+
+function loadYouTubeVideo(url){
+  const queryString = url.slice(url.indexOf('?'))
+  const params = new URLSearchParams(queryString)
+  const videoId = params.get('v')
+  if (videoId != null) {
+    const iframe = document.createElement("iframe");
+    iframe.width = "100%";
+    iframe.height = "445";
+    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+    iframe.frameborder = "0";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframe.allowfullscreen = true;
+    videoContainer.innerHTML = "";
+    videoContainer.appendChild(iframe)
+  }
+}

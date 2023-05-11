@@ -349,3 +349,15 @@ input{
   background-color: rgba(255,255,255,0.5);
 
 }
+
+.button-as-link {
+  background: white;
+  color: #21455B;
+  font-weight: bold;
+  border: 0px;
+  border-radius: 2px;
+}
+
+.hide {
+  display: none;
+}

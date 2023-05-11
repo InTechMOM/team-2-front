@@ -8,7 +8,7 @@ const emailInput = document.getElementById("info__email");
 const titleInput = document.getElementById("info__title");
 const descriptionInput = document.getElementById("info__description");
 const linkInput = document.getElementById("project-info__link");
-const videoContainer = document.getElementById("project-video")
+const videoContainer = document.getElementById("project-video");
 
 function loadYouTubeVideo(){
   // https://www.youtube.com/watch?v=OWKXEJN67FE
