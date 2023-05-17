@@ -138,6 +138,7 @@ header{
     margin-right: 17px;
     text-align: center;
 }
+
 .user{
     margin-right: 50px;
     margin-bottom: 43px;
@@ -148,6 +149,7 @@ header{
     justify-content: end;
     
 }
+
 .user-link{
     font-family: 'Comfortaa';
     font-size: 22px;
@@ -156,11 +158,7 @@ header{
     color: white;
     text-decoration: none;
 }
-#icono-user{
-    width: 64px;
-    margin-right: 19px;
 
-}
 #info__first_name{
     margin-right: 30px;
 }
@@ -168,7 +166,8 @@ header{
     left:var(--left-size);
 }
 .icono-info{
-    width: 50px;
+    width: 25px;
+    height: 25px;
     margin-right: 9px;
 
 }
@@ -199,11 +198,9 @@ header{
     content: '';
     height: calc(100% - 42px);
     width: 1px;
-    
     position: absolute;
     right: 0;
     top: 42px;
-    
     background-color:#21455B;
 }
 
@@ -217,9 +214,25 @@ header{
 }
 
 .name-info{
-    display: flex;
+    display: block;
     align-items: center;
     margin-bottom: 35px;
+}
+.info{
+    display: flex;
+    display: inline;
+}
+.name{
+    display: inline;
+    margin-right: 8px;
+    width: 230px;
+    background-color:#C6DBD0 ;
+    border-radius: 20px;
+    height: 37px;
+    font-family: 'Lato';
+    font-size: 14px;
+    padding-top: 10px;
+    
 }
 .email-info{
     display: flex;

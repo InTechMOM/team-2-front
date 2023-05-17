@@ -19,8 +19,7 @@
 
         <header>
             <div class="user">
-                 
-                <a class="user-link" href="#"><img src="../images/icono usuario.png" id="icono-user">Nombre</a>
+                <a class="user-link" href="#">¡Hola, Nombre Alumno!</a>
             </div>
         </header>
         <nav>
@@ -29,54 +28,39 @@
             </div>
             <div class="navegacion">
                 <div class="bg-nav">
-                    <button id="btn-inicio" class="btn-nav" type="button"><img src="../images/icono inicio.png" class="nav-img">Inicio</button>
-                </div>
-                <div class="bg-nav">
-                    <button id="btn-evaluacion" class="btn-nav" type="button"><img src="../images/icono evaluacion.png" class="nav-img">Evaluacion</button>      
-                </div>
-                <div class="bg-nav">
-                    <button id="btn-analisis" class="btn-nav" type="button"><img src="../images/icono analisis.png" class="nav-img">Analisis</button>
-                </div>
-                <div class="bg-nav">
-                    <button id="btn-foro" class="btn-nav" type="button"><img src="../images/icono foro.png" class="nav-img">Foros</button>
+                    <button id="btn-evaluacion" class="btn-nav" type="button"><img src="../images/icono evaluacion.png" class="nav-img">Cargar Video</button>      
                 </div>
             </div>
         </nav>  
             <div class="container">
-                <div class="title">
-                    <img src="../images/icono carguevideo.png" class="icono"> Cargar Video              
-                </div>
                 <form action="" class="flex-form">
                     <div class="main">
                         <div class="main__column" id="left_column">
                             <section class="info" id="pl-info">
-                                <h5 class="title-pl title-pro left-line"> Lider del Proyecto</h5>
+                                <h5 class="title-pl right-line"> Video</h5>
                                 <div class="name-info">
-                                    <img src="../images/icono nombre.png" class="icono-info">
-                                    <input id="info__first_name" class="input input-info"  type="text" placeholder="Nombre" required minlength="1" maxlength="20">
-                                    <input id="info__last_name" class="input input-info" type="text" placeholder="Apellido" required minlength="1" maxlength="20">
+                                    <div class="info">
+                                        <img src="../images/icono nombre.png" class="icono-info">
+                                        <div class="name"><label id="info__first_name">Nombre</label></div>
+                                    </div>
+                                    <div class="name info">
+                                        <label id="info__last_name">Apellido</label>
+                                    </div>
+                                    <div class="email-info">
+                                        <img src="../images/icono email.png" class="icono-info">
+                                        <div class="name"><label id="info__email">alumno@edvisto.com</label></div>
+                                    </div>
                                 </div>
-                                <div class="email-info">
-                                    <img src="../images/icono email.png" class="icono-info">
-                                    <input id="info__email" class="input v-email" type="email" placeholder="Correo" required minlength="1" maxlength="40">
-                                </div>
-                            </section>
-                            
+                            </section>  
                             <section class="info" id="project-info">
-                                <h5 class="title-pl title-pro left-line"> Proyecto</h5>
                                 <div class="title-info">
                                     <img src="../images/icono titulo.png" class="icono-info">
                                     <input id="info__title" class="input input-pro" type="text" placeholder="Título del Proyecto" required minlength="1" maxlength="30">
                                 </div>
                                 <div class="descp-info">
                                     <img src="../images/icono descp.png" class="icono-info">
-                                    <textarea id="info__description" name="textarea" rows="10" cols="50" class="input input-pro" placeholder=" Descripción"></textarea>
+                                    <textarea id="info__description" name="textarea" rows="10" cols="50" class="textarea" placeholder=" Descripción"></textarea>
                                 </div>
-                            </section>  
-                        </div>
-                        <div class="main__column" id="right_column">
-                            <section class="info" id="show-video">
-                                <h5 class="title-pl right-line"> Video</h5>
                                 <div id="main_column-link">
                                     <input id="project-info__link" class="input" type="text" placeholder="https://" required minlength="1">
                                     <button id="btn-cargar" class="boton" type="button" >
@@ -89,6 +73,11 @@
                                         Guardar
                                      </button>
                                 </div>
+                            </section>  
+                        </div>
+                        <div class="main__column" id="right_column">
+                            <section class="info" id="show-video">
+                                <h5 class="title-pl right-line"> Evaluaciones</h5>
                             </section>
                         </div>             
                     </div>

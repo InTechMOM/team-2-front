@@ -72,7 +72,7 @@ function loadYouTubeVideo(url){
   }
 }
 
-//estrellas
+// ***** estrellas
 
 // check if there is a rating stars div on the page
 if(document.querySelector(".starIcon1") != undefined){
