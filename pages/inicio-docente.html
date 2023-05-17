@@ -58,37 +58,48 @@
                               <h5 class="title-pl right-line"> Evaluacion</h5>        
                              </div> 
                             <div id="repro-video"></div>
-                            <div>
-                                <label for="habilidades">Habilidades a Evaluar</label>
-                                  <select name="habilidades" id="habi-drop-down">
-                                    <option value="creatividad">Creatividad</option>
-                                    <option value="comunicacion">Comunicacion</option>
-                                    <option value="colaboracion">Colaboracion</option>
-                                    <option value="pensamiento-critico">Pensamiento Critico</option>
-                                    <option value="pensamiento-logico">Pensamiento Logico</option>
-                                    <option value="innovacion">Innovacion</option>
-                                    <option value="trabajo-equipo">Trabajo en Equipo</option>
-                                    <option value="resol-problema">Resolucion de Problemas</option>
-                                    <option value="adaptabilidad">Adaptabilidad</option>
-                                  </select>
-                           </div>
-                           <div class="form-group">
-                               <input class="star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
-                               <label class="label-starts" for="star1"><i class="starPicker starIcon1 fa fa-star"></i></label>
-                                                         <input class="star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
-                               <label class="label-starts" for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
-                                                         <input class="star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
-                               <label class="label-starts" for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
-                                                         <input class="star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
-                               <label class="label-starts" for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
-                                                         <input class="star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
-                               <label class="label-starts" for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
-                           </div>
-                           <div>
-                            <p><label for="w3review">Comentarios:</label></p>
-                            <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
-                            <button id="btn-añadir" class="boton" type="button" > Añadir </button>
-                           </div>
+                            <div class="evaluacion-menu">
+                                 <div>
+                                     <label for="habi-drop-down" class="label-evaluacion">Habilidades a Evaluar</label>
+                                       <select name="habilidades" id="habi-drop-down">
+                                         <option value="creatividad">Creatividad</option>
+                                         <option value="comunicacion">Comunicacion</option>
+                                         <option value="colaboracion">Colaboracion</option>
+                                         <option value="pensamiento-critico">Pensamiento Critico</option>
+                                         <option value="pensamiento-logico">Pensamiento Logico</option>
+                                         <option value="innovacion">Innovacion</option>
+                                         <option value="trabajo-equipo">Trabajo en Equipo</option>
+                                         <option value="resol-problema">Resolucion de Problemas</option>
+                                         <option value="adaptabilidad">Adaptabilidad</option>
+                                       </select>
+                                </div>
+                                <div>
+                                  <label for="input-min" class="label-evaluacion">Minuto</label>
+                                  <input type="time" id="input-min" name="Minuto">
+                                </div>
+                                <div class="label-evaluacion">
+                                  <div id="label-punta" >
+                                    <label for="">Puntaje</label>
+                                  </div>
+                                  <div class="form-group">
+                                      <input class="star1 radioBtnStar" type="radio" name="comment[rating]" value="1" required>
+                                      <label class="label-starts" for="star1"><i class="starPicker starIcon1 fa fa-star"></i></label>
+                                                                <input class="star2 radioBtnStar" type="radio" name="comment[rating]" value="2">
+                                      <label class="label-starts" for="star2"><i class="starPicker starIcon2 fa fa-star"></i></label>
+                                                                <input class="star3 radioBtnStar" type="radio" name="comment[rating]" value="3">
+                                      <label class="label-starts" for="star3"><i class="starPicker starIcon3 fa fa-star"></i></label>
+                                                                <input class="star4 radioBtnStar" type="radio" name="comment[rating]" value="4">
+                                      <label class="label-starts" for="star4"><i class="starPicker starIcon4 fa fa-star"></i></label>
+                                                                <input class="star5 radioBtnStar" type="radio" name="comment[rating]" value="5">
+                                      <label class="label-starts" for="star5"><i class="starPicker starIcon5 fa fa-star"></i></label>
+                                  </div>
+                                </div>
+                             </div>
+                             <div>
+                                <p><label for="coments"class="label-evaluacion">Comentarios:</label></p>
+                                <textarea  class="textarea" id="coments" name="w3review" rows="4" cols="50"></textarea>
+                                <button id="btn-añadir" class="boton" type="button" > Añadir </button>
+                              </div>
                           </section> 
         <script src="../scripts/inicio-docente.js"></script>  
     </body>
