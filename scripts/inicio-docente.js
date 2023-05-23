@@ -204,16 +204,14 @@ function createSection(habiliName,caliStar ) {
   const container = document.getElementsByClassName('section-evaluacion')[0]
   container.appendChild(divSection)
 }
-createSection(habiliName,);
 
 const btnEnd = document.getElementById("btn-finalizar");
 btnEnd.addEventListener('click', () => {
   Swal.fire({
-
+    imageUrl: '../images/Mesa_de_trabajo_1.png',
+    title: '¡Evaluación Finalizada con éxito!',
+    imageWidth: 400,
+    imageHeight: 400,
+    
   })
-Swal.fire({
-  imageUrl: '../images/Mesa_de_trabajo_1.png',
-  title: '¡Evaluación Finalizada con éxito!',
-  
-})
 })

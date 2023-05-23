@@ -39,6 +39,7 @@ body{
     align-items: center;
 
 }
+
 input{
     border-radius: 20px;
     border-width: 0;
@@ -52,7 +53,7 @@ input{
     height: 37px;
     margin-bottom: 26px;
     margin-left: 20px;
-    margin-top: 0;
+    margin-top: 50px;
 }
 /*** ********* css del menu maestro(proyecto)*/
 
