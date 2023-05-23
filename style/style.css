@@ -414,7 +414,17 @@ height: 150px;
 margin-bottom: 26px;
 }
 
-#conteiner-evaluacion{
-  color: white;
+.cuadro-evalu{
+  background-color: white;
   border-radius: 20px;
+  width: 677px;
+  height: 298px;
+}
+.fila-evaluacion{
+  background-color: rgba(33,69,91,0.2);
+  width: 586px;
+  height: 34px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }

@@ -46,12 +46,14 @@ loadProjectsOnTab()
 
 
 const videoContainer = document.getElementById("repro-video");
+let evaluatedSkills = []
 
 function loadProject(id) {
   const projectContainer = document.getElementById('project-section')
   projectContainer.classList.remove('hide')
   const project = projects.find(project => project.id == id)
   loadYouTubeVideo(project.videoUrl)
+  evaluatedSkills = []
   console.log(project)
 }
 
@@ -147,3 +149,58 @@ if(document.querySelector(".starIcon1") != undefined){
   // create the events listeners
   createRatingEventListeners();
 }
+
+
+let habiliOptions = document.querySelector(".habilidades-select");
+
+const btnAdd = document.getElementById("btn-añadir");
+
+function getStarCalification () {
+  const inputs = document.getElementsByName('comment[rating]')
+  for (const input of inputs) {
+    if (input.checked) {
+      return Number(input.value)
+    }
+  }
+  return 0;
+}
+
+btnAdd.addEventListener('click', () => {
+  const habiliName = habiliOptions.options[habiliOptions.selectedIndex].text;
+  const time = document.getElementById('input-min').value
+  const stars = getStarCalification()
+  const comments = document.getElementById('coments').value
+  const evaluatedSkill = {
+    habiliName,
+    time,
+    stars,
+    comments
+  }
+  createSection(habiliName, stars)
+  evaluatedSkills.push(evaluatedSkill)
+  console.log(habiliName)
+  console.log(time)
+})
+
+
+function createSection(habiliName,caliStar ) {
+  const divSection = document.createElement('div')
+  divSection.innerHTML = `
+  <div class= "fila-evaluacion">
+  <div class="habilidades-name">${habiliName}</div>
+  <div class="calificacion-start">
+  <i class="${caliStar >= 1 ? 'clickedStar' : ''} fa fa-star"></i>
+  <i class="${caliStar >= 2 ? 'clickedStar' : ''} fa fa-star"></i>
+  <i class="${caliStar >= 3 ? 'clickedStar' : ''} fa fa-star"></i>
+  <i class="${caliStar >= 4 ? 'clickedStar' : ''} fa fa-star"></i>
+  <i class="${caliStar >= 5 ? 'clickedStar' : ''} fa fa-star"></i>
+  ${caliStar}
+  </div>
+  </div>
+  
+  `
+  const container = document.getElementsByClassName('section-evaluacion')[0]
+  container.appendChild(divSection)
+}
+createSection(habiliName,);
+
