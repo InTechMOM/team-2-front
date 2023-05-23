@@ -196,6 +196,8 @@ function createSection(habiliName,caliStar ) {
   <i class="${caliStar >= 5 ? 'clickedStar' : ''} fa fa-star"></i>
   ${caliStar}
   </div>
+  <input class="radio-x" id="btn-radio" type="radio" value="6">
+  <i class="fa-regular fa-circle-xmark"></i>
   </div>
   
   `
@@ -204,3 +206,14 @@ function createSection(habiliName,caliStar ) {
 }
 createSection(habiliName,);
 
+const btnEnd = document.getElementById("btn-finalizar");
+btnEnd.addEventListener('click', () => {
+  Swal.fire({
+
+  })
+Swal.fire({
+  imageUrl: '../images/Mesa_de_trabajo_1.png',
+  title: '¡Evaluación Finalizada con éxito!',
+  
+})
+})

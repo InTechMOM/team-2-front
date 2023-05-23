@@ -134,6 +134,7 @@ input{
     padding: 1em;
   }
 
+
 /* estilo del toggle */
 .switch {
     position: relative;
@@ -419,12 +420,20 @@ margin-bottom: 26px;
   border-radius: 20px;
   width: 677px;
   height: 298px;
+  padding-left: 20px;
+  padding-top: 10px;
+  margin-top: 18px;
 }
 .fila-evaluacion{
   background-color: rgba(33,69,91,0.2);
   width: 586px;
   height: 34px;
   margin-bottom: 10px;
+  margin-right: 20px;
   display: flex;
   align-items: center;
+  font-family: 'Comfortaa';
+}
+.radio-x{
+  display: none;
 }
