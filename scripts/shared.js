@@ -21,5 +21,5 @@ function collapseDropdown() {
 }
 
 function disconnect() {
-    window.location = '/'
+    window.location = '/team-2-front/index.html'
 }

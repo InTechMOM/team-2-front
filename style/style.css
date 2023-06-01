@@ -262,7 +262,7 @@ input{
     width: 25px;
     background-color: white;
     border-radius: 50%;
-    box-shadow: inset 10px 0px gray;
+   
   }
   
   /* On mouse-over, add a grey background color */
@@ -362,6 +362,9 @@ input{
   font-weight: bold;
   border: 0px;
   border-radius: 2px;
+}
+#link-id-page{
+  margin-top: 20px;
 }
 
 .hide {
