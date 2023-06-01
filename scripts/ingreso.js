@@ -37,9 +37,9 @@ function getPage(){
         headers: myHeaders
       };
 
-
-
-      fetch(`http://127.0.0.1:3000/users/check-email?email=${username}`, requestOptions)
+   
+      // https://team-2-back.onrender.com
+      fetch(`https://team-2-back.onrender.com/users/check-email?email=${username}`, requestOptions)
         .then(response => {
           if (response.ok) {
             return response.json()
@@ -52,6 +52,7 @@ function getPage(){
           }
         })
         .then(result => {
+          localStorage.setItem('user', JSON.stringify(result))
           // If alumno
           if (rol.checked && result.rol === 'student') {
             window.location.href ="./pages/carga-video.html"

@@ -14,17 +14,20 @@
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../style/style.css">
         <link rel="stylesheet" href="../style/pagina-cargar.css">
+        <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+        <script src="https://unpkg.com/jspdf-autotable"></script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     </head>
     <body class="body-cargar">
 
         <header>
             <div class="user">
-                <a class="user-link" href="#">¡Hola, Nombre Alumno!</a>
+                <a class="user-link" href="#">¡Hola, <div id="username">  Nombre Alumno</div>!</a>
             </div>
         </header>
         <nav>
             <div class="logo-nav">
-                <img src="../images/Logo edvisto.png" id="ed-img">
+                <img src="../images/logo-edvisto.png" id="ed-img">
             </div>
             <div class="navegacion">
                 <div class="bg-nav">
@@ -61,6 +64,9 @@
                                     <img src="../images/icono descp.png" class="icono-info">
                                     <textarea id="info__description" name="textarea" rows="10" cols="50" class="textarea" placeholder=" Descripción"></textarea>
                                 </div>
+                                <div class="title-info">
+                                    <i class="fa-solid fa-circle-user"></i><input id="email_teacher" class="input input-pro" type="text" placeholder="Email Docente" required minlength="1" maxlength="30">
+                                </div>
                                 <div id="main_column-link">
                                     <input id="project-info__link" class="input" type="text" placeholder="https://" required minlength="1">
                                     <button id="btn-cargar" class="boton" type="button" >
@@ -78,8 +84,10 @@
                         <div class="main__column" id="right_column">
                             <section class="info" id="show-video">
                                 <h5 class="title-pl right-line"> Evaluaciones</h5>
+                                <div id="tabs-evaluacion"></div>
                             </section>
-                        </div>             
+                            <div id="pdf-container"></div>
+                        </div>
                     </div>
                 </form>
                 </div>

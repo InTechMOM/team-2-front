@@ -10,7 +10,7 @@ function createTab(id, studentName, projectName, videoUrl, description) {
       </div>
     </label>
     <div class="tab-content">
-      <button class="button-as-link" onclick="loadProject(${id})">${videoUrl}</button>
+      <button class="button-as-link" onclick="loadProject('${id}')">${videoUrl}</button>
       <div>
       ${description}
       </div>
@@ -19,40 +19,110 @@ function createTab(id, studentName, projectName, videoUrl, description) {
   return divTab
 }
 
+const apiEnabled = true
+
+ const baseUrl = 'https://team-2-back.onrender.com'
+//const baseUrl = 'http://localhost:3000'
+const urls = {
+  getProjects: `${baseUrl}/project/findProject`,
+  saveProject: `${baseUrl}/project/{id}/assessment`,
+}
+
 function getProjects() {
   // Emula llamado a la API
-  return Array(15).fill(0).map((item, index) => ({
-    id: index,
-    studentName: 'Martina Zambrano',
-    projectName: 'In tech mom - inicio docente',
-    videoUrl: 'https://www.youtube.com/watch?v=afo7Ynw-BX8',
-    description: 'Descripcion: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis voluptas illo repudiandae deleniti possimus fugit reiciendis voluptatibus libero autem tenetur, quos aspernatur amet, porro, quibusdam sint eum accusantium explicabo! Excepturi.'
-  }))
+  if (apiEnabled) {
+    const user = getUser()
+    const teacherEmail = encodeURIComponent(user.email)
+    return fetch(`${urls.getProjects}?teachEmail=${teacherEmail}`)
+      .then(result => {
+        if (result.ok) {
+          return result.json()
+        }
+      })
+  } else {
+    return Array(10).fill(0).map((item, index) => {
+      if (index % 2 === 0) {
+        return {
+          id: index,
+          studentName: 'Karen',
+          studentLastName: 'Echavarria',
+          studentEmail: "karen@mail.com",
+          teachEmail: "Andrea@email.com",
+          url: 'https://www.youtube.com/watch?v=RbT28X0wiRw',
+          projectName: 'Google email domains',
+          description: 'Video para configurar emil en google',
+          createdAt: '2023-05-09T18:55:18.010+00:00'
+        }
+      } else {
+        return {
+          id: index,
+          studentName: 'Karen',
+          studentLastName: 'Echavarria',
+          studentEmail: "karen@mail.com",
+          teachEmail: "Andrea@email.com",
+          url: 'https://www.youtube.com/watch?v=RbT28X0wiRw',
+          projectName: 'Google email domains',
+          description: 'Video para configurar emil en google',
+          createdAt: '2023-05-09T18:55:18.010+00:00',
+          assessment: {
+            criticalThinking: {
+              timestamp: '2:00',
+              score: 5,
+              comment: "nice"
+            },
+            problemSolving: {
+              timestamp: '2:00',
+              score: 5,
+              comment: "nice"
+            }
+          }
+        }
+      }
+  })
+  }
 }
 
 let projects = []
 
-function loadProjectsOnTab () {
-  projects = getProjects()
-  const tabsContainer = document.getElementById('tabs-container')
-  for (const project of projects) {
-    const tabElement = createTab(project.id, project.studentName, project.projectName, project.videoUrl, project.description)
-    tabsContainer.appendChild(tabElement)
+function getUser() {
+  try {
+    return JSON.parse(localStorage.getItem('user'))
+  } catch (e) {
+    console.log(e.message)
+    return { name: 'Unkown', email: 'user2@gmail.com' }
   }
 }
 
-loadProjectsOnTab()
+async function init () {
+  const user = getUser()
+  document.getElementById("username").innerText = user.name
+  console.log(user)
+  projects = await getProjects()
+  const tabsContainer = document.getElementById('tabs-container')
+  for (const project of projects) {
+    const tabElement = createTab(project._id, `${project.studentName} ${project.studentLastName}`, project.projectName, project.url, project.description)
+    tabsContainer.appendChild(tabElement)
+  }
+}
+init()
+
 
 
 
 const videoContainer = document.getElementById("repro-video");
 let evaluatedSkills = []
 
+let selectedProject = -1
 function loadProject(id) {
   const projectContainer = document.getElementById('project-section')
   projectContainer.classList.remove('hide')
-  const project = projects.find(project => project.id == id)
-  loadYouTubeVideo(project.videoUrl)
+  const project = projects.find(project => project._id == id)
+  console.log(id)
+  console.log(projects)
+  selectedProject = id
+  console.log(selectedProject)
+  console.log(typeof selectedProject)
+  loadYouTubeVideo(project.url)
   evaluatedSkills = []
   console.log(project)
 }
@@ -182,9 +252,22 @@ btnAdd.addEventListener('click', () => {
   console.log(time)
 })
 
+function removeSkill(habiliName) {
+  evaluatedSkills = evaluatedSkills.filter(evaluatedSkill => evaluatedSkill.habiliName != habiliName)
+  const skillId = getSkillId(habiliName)
+  const row = document.getElementById(skillId)
+  if (row != null) {
+    row.remove()
+  }
+ }
+
+function getSkillId(habiliName) {
+  return `rated-skill-${habiliName.toLowerCase().split(' ').join('-')}`
+}
 
 function createSection(habiliName,caliStar ) {
   const divSection = document.createElement('div')
+  divSection.id = getSkillId(habiliName)
   divSection.innerHTML = `
   <div class= "fila-evaluacion">
   <div class="habilidades-name">${habiliName}</div>
@@ -194,10 +277,10 @@ function createSection(habiliName,caliStar ) {
   <i class="${caliStar >= 3 ? 'clickedStar' : ''} fa fa-star"></i>
   <i class="${caliStar >= 4 ? 'clickedStar' : ''} fa fa-star"></i>
   <i class="${caliStar >= 5 ? 'clickedStar' : ''} fa fa-star"></i>
-  ${caliStar}
   </div>
-  <input class="radio-x" id="btn-radio" type="radio" value="6">
-  <i class="fa-regular fa-circle-xmark"></i>
+  <button type="button" class="remove-skill" onclick="removeSkill('${habiliName}')">
+    <i class="fa-regular fa-circle-xmark"></i>
+  </buton>
   </div>
   
   `
@@ -205,13 +288,103 @@ function createSection(habiliName,caliStar ) {
   container.appendChild(divSection)
 }
 
+
+
+function createPDF(){
+  var pdf = new jspdf.jsPDF();
+  const image = new Image()
+  image.src = '../images/logo-edvisto-fondo.png'
+  pdf.text(40,20,"Resultados de Evaluación");
+  pdf.addImage(image,10,3,26,26)
+  const div = document.createElement('div')
+
+
+  let tableContent = ''
+  const tdStyle = 'border: 0.5px solid #979797; background: #D3D9DF; padding: 1px; color: #555555;'
+  for (const evaluatedSkill of evaluatedSkills) {
+    tableContent +=`
+      <tr >
+        <td style="${tdStyle}">${evaluatedSkill.habiliName}</td>
+        <td style="${tdStyle}">${evaluatedSkill.time}</td>
+        <td style="${tdStyle}">${evaluatedSkill.stars}</td>
+      </tr>
+      <tr>
+        <td style="${tdStyle}" colspan="3">${evaluatedSkill.comments}</td>
+      </tr>
+    `
+  }
+  div.innerHTML = `<table>
+   ${tableContent}
+  </table>`
+  image.onload = function() {
+    pdf.html(div, {
+      callback(doc) {
+        doc.save('mipdfhtml.pdf')
+      },
+      x: 15,
+      y: 30,
+      width: 170, //target width in the PDF document
+      windowWidth: 650 //window width in CSS pixels
+    })    
+  }
+}
+function saveEvaluation () {
+  console.log(urls.saveProject)
+  console.log(selectedProject)
+  
+ fetch(urls.saveProject.replace('{id}', selectedProject),
+  {
+    method: 'PUT',
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      assessments: evaluatedSkills.map((evaluatedSkill) => ({
+        skill: evaluatedSkill.habiliName,
+        timestamp: evaluatedSkill.time,
+        score: evaluatedSkill.stars,
+        comment: evaluatedSkill.comments
+      }))
+    })
+  })
+}
 const btnEnd = document.getElementById("btn-finalizar");
 btnEnd.addEventListener('click', () => {
+  saveEvaluation()
   Swal.fire({
     imageUrl: '../images/Mesa_de_trabajo_1.png',
     title: '¡Evaluación Finalizada con éxito!',
+    showCloseButton: true,
     imageWidth: 400,
     imageHeight: 400,
-    
+    confirmButtonText: 'Ver'
   })
+    .then((result) => {
+    if (result.isConfirmed) {
+      createPDF()
+    }
+  })
+    
+})
+
+const searcher = document.getElementById('searcher')
+searcher.addEventListener('keyup', () => {
+  const keyValue = searcher.value.toLowerCase().trim()
+  const splittedValues = keyValue.split(' ')
+  const filteredProjects = keyValue === '' ? projects : projects.filter(project => {
+    const firstName = project.studentName.toLowerCase();
+    const lastName = project.studentLastName.toLowerCase();
+    for (const searchValue of splittedValues) {
+      if (!firstName.includes(searchValue) && !lastName.includes(searchValue)) {
+        return false
+      }
+    }
+    return true
+  })
+  const tabsContainer = document.getElementById('tabs-container')
+  tabsContainer.innerHTML = ''
+  for (const project of filteredProjects) {
+    const tabElement = createTab(project._id, `${project.studentName} ${project.studentLastName}`, project.projectName, project.url, project.description)
+    tabsContainer.appendChild(tabElement)
+  }
 })

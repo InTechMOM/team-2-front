@@ -16,19 +16,20 @@
         <link rel="stylesheet" href="../style/style.css">
         <link rel="stylesheet" href="../style/pagina-cargar.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
+        <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+        <script src="https://unpkg.com/jspdf-autotable"></script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     </head>
     <body class="body-cargar">
 
         <header>
             <div class="user"> 
-                <a class="user-link" href="#">¡Hola, Nombre Docente!</a>
+                <a class="user-link" href="#">¡Hola, <div id="username"> Nombre Docente</div>!</a>
             </div>
         </header>
         <nav>
             <div class="logo-nav">
-                <img src="../images/Logo edvisto.png" id="ed-img">
+                <img src="../images/logo-edvisto.png" id="ed-img">
             </div>
             <div class="navegacion">
                 <div class="bg-nav">
@@ -45,7 +46,7 @@
                                   <h5 class="title-pl right-line">Proyectos</h5>         
                                 </div> 
                                 <div class="background-proyect">
-                                  <input type="search" placeholder="Buscador">
+                                  <input type="search" id="searcher" placeholder="Buscador">
                                   <div class="row">
                                     <div class="col">
                                       <div class="tabs" id="tabs-container">
