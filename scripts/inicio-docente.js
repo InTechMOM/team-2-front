@@ -2,7 +2,7 @@ function createTab(id, studentName, projectName, videoUrl, description) {
   const divTab = document.createElement('div')
   divTab.className = 'tab'
   divTab.innerHTML = `
-    <input class="input-menu" type="radio" id="rd${id}" name="rd">
+    <input class="input-menu" type="checkbox" id="rd${id}" name="rd">
     <label class="tab-label" for="rd${id}">
       <div>
         <div class="tab__student-name">${studentName}</div>
@@ -248,8 +248,14 @@ btnAdd.addEventListener('click', () => {
   }
   createSection(habiliName, stars)
   evaluatedSkills.push(evaluatedSkill)
-  console.log(habiliName)
-  console.log(time)
+  
+  document.getElementById('input-min').value = ''
+  document.getElementById('coments').value = ''
+  const inputs = document.getElementsByName('comment[rating]')
+  for (const input of inputs) {
+    input.checked = false
+  }
+  removeClickedStar()
 })
 
 function removeSkill(habiliName) {

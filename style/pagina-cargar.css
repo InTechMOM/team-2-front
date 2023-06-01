@@ -159,9 +159,12 @@ header{
     text-decoration: none;
 }
 
-#info__first_name{
+#info__first_name #info__last_name{
     margin-right: 30px;
+    
+    
 }
+
 .pl-info{
     left:var(--left-size);
 }
@@ -225,14 +228,26 @@ header{
 .name{
     display: inline;
     margin-right: 8px;
-    width: 230px;
     background-color:#C6DBD0 ;
     border-radius: 20px;
     height: 37px;
     font-family: 'Lato';
     font-size: 14px;
     padding-top: 10px;
-    
+    color: #21455B;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    width: 230px;
+    padding-right: 200px;
+
+
+}
+#div-email{
+    width: 330px;
+    height: 37px;
+    padding-bottom: 0px;
+    padding-top: 5px;
 }
 .email-info{
     display: flex;

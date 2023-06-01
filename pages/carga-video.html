@@ -17,12 +17,26 @@
         <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
         <script src="https://unpkg.com/jspdf-autotable"></script>
         <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="../scripts/shared.js"></script>  
     </head>
     <body class="body-cargar">
 
         <header>
             <div class="user">
                 <a class="user-link" href="#">¡Hola, <div id="username">  Nombre Alumno</div>!</a>
+                <!-- Inicio dropdown -->
+                <button type="button" id="collpase-button" onclick="collapseDropdown()">
+                    <i class="fa-solid fa-chevron-down fa-white"></i>
+                  </button>
+                  <div id="dropdown" class="dropdown hide">
+                    <ul>
+                      <li>
+                        <button type="button" onclick="disconnect()"><i class="fa-solid fa-lock"></i> Cerrar sesion</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Fin dropdown -->
             </div>
         </header>
         <nav>
@@ -44,14 +58,18 @@
                                 <div class="name-info">
                                     <div class="info">
                                         <img src="../images/icono nombre.png" class="icono-info">
-                                        <div class="name"><label id="info__first_name">Nombre</label></div>
+                                        <div class="name">
+                                            <label id="info__first_name">Nombre</label>
+                                        </div>
                                     </div>
-                                    <div class="name info">
-                                        <label id="info__last_name">Apellido</label>
-                                    </div>
+                                        <div class="name ">
+                                            <label id="info__last_name">Apellido</label>
+                                        </div>
+                                </div>
+                                <div>    
                                     <div class="email-info">
                                         <img src="../images/icono email.png" class="icono-info">
-                                        <div class="name"><label id="info__email">alumno@edvisto.com</label></div>
+                                        <div class="name" id="div-email"><label id="info__email">alumno@edvisto.com</label></div>
                                     </div>
                                 </div>
                             </section>  

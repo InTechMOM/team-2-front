@@ -102,10 +102,10 @@ function getEvaluations() {
   const qualified = project.assessments != null && project.assessments.length > 0
   divTab.className = 'tab'
   divTab.innerHTML = `
-  <input class="input-menu" type="radio" id="rd${id}" name="rd">
+  <input class="input-menu" type="checkbox" id="rd${id}" name="rd">
   <label class="tab-label" for="rd${id}">
     <div>
-      <div class="tab__project-name">${project.projectName} - ${qualified ? 'CALIFICADO' : ''}</div>
+      <div class="tab__project-name">${project.projectName} ${qualified ? '- CALIFICADO' : ''}</div>
     </div>
   </label>
   <div class="tab-content">
